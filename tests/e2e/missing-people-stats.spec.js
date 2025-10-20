@@ -51,6 +51,6 @@ test('create, filter, edit and delete missing', async ({ page }) => {
   await page.getByRole('button', { name: 'Editar' }).click();
   await expect(page).toHaveURL(new RegExp(`/missing-people-stats/${testProvince}/${testYear}`));
 
-  await page.getByPlaceholder('Hombres desaparecidos').fill(testEdit);
+  await page.getByLabel('Hombres desaparecidos').fill(testEdit);
   await page.getByRole('button', { name: /Guardar/i }).click();
 });
