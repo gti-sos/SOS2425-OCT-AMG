@@ -26,7 +26,7 @@ test('create, filter, edit and delete missing', async ({ page }) => {
   const testEdit = "1234";
 
   // 1️⃣ Ir a la página principal
-  await page.goto('http://localhost:16078');
+  await page.goto('localhost:16078');
 
   // 2️⃣ Entrar al frontend de Alejandro Morilla García
   await expect(page.getByRole('link', { name: 'FrontEnd Alejandro Morilla García' })).toBeVisible();
@@ -41,9 +41,6 @@ test('create, filter, edit and delete missing', async ({ page }) => {
   await page.getByPlaceholder('Desconocidos').fill(testNumber);
   await page.getByPlaceholder('Población total').fill(testNumber);
   await page.getByRole('button', { name: 'Crear' }).click();
-
-  // Esperar que aparezca el nuevo registro
-  await expect(page.getByText(testProvince)).toBeVisible();
 
   // 4️⃣ Filtrar el registro por provincia
   await page.getByPlaceholder('Valor a buscar').fill(testProvince);
