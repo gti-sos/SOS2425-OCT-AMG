@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "nedb": "^1.8.0",
+    "request": "^2.88.2"
+  },
+  "name": "sos2425-oct-amg",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm run test-missing-people-stats-local",
+    "test-api-local": "npx newman run tests/backend/api-tests.json -e tests/backend/api-env-local.json",
+    "test-api-online": "npx newman run tests/backend/api-tests.json -e tests/backend/api-env-online.json",
+    "test-missing-people-stats-local": "start-server-and-test start http://localhost:16078 test-api-local",
+    "test-missing-people-stats-online": "start-server-and-test start https://sos2425-oct-amg.onrender.com test-api-online",
+    "build": "cd src/frontend; npm install; npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gti-sos/SOS2425-OCT-AMG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gti-sos/SOS2425-OCT-AMG/issues"
+  },
+  "homepage": "https://github.com/gti-sos/SOS2425-OCT-AMG#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.8.1"
+  }
+}
