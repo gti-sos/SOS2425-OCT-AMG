@@ -6,7 +6,7 @@
 
 ### Project Description
 
-This project provides open data and API endpoints about missing people in Spain between 2017 and 2021 in each province.
+The project provides open data and API endpoints about missing people in Spain between 2017 and 2021 in each province.
 
 ### Repository
 
