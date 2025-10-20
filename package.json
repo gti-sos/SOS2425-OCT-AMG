@@ -32,6 +32,7 @@
   "homepage": "https://github.com/gti-sos/SOS2425-OCT-AMG#readme",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "@types/node": "^24.8.1"
+    "@types/node": "^24.8.1",
+    "start-server-and-test": "^2.0.11"
   }
 }
