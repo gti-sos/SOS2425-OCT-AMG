@@ -76,10 +76,6 @@
                 total_population: Number(newMissingTotalPopulation) || 0
             };
 
-            console.log("API URL:", API);
-            console.log("Payload:", payload);
-            console.log("Payload Stringifygeado:", JSON.stringify(payload))
-
             const res = await fetch(API, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
