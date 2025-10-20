@@ -29,11 +29,12 @@ test('create, filter, edit and delete missing', async ({ page }) => {
   await page.goto('http://localhost:16078');
 
   // 2️⃣ Entrar al frontend de Alejandro Morilla García
+  await expect(page.getByRole('link', { name: 'FrontEnd Alejandro Morilla García' })).toBeVisible();
   await page.getByRole('link', { name: 'FrontEnd Alejandro Morilla García' }).click();
   await expect(page).toHaveTitle(/Missing People Stats/);
 
   // 3️⃣ Crear nuevo registro
-  await page.getByPlaceholder('Año').fill(testYear);
+  await page.getByPlaceholder('Año', { exact: true }).fill(testYear);
   await page.getByPlaceholder('Provincia').fill(testProvince);
   await page.getByPlaceholder('Hombres desaparecidos').fill(testNumber);
   await page.getByPlaceholder('Mujeres desaparecidas').fill(testNumber);
